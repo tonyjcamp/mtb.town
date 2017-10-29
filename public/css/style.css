@@ -1,0 +1,33 @@
+
+body {
+    font: normal 1em/1.5em Helvetica, Arial, sans-serif;
+}
+
+#header .identity {
+    color: orangered;
+    font: 800 1.25em 'Helvetica Neue';
+    font-weight: 800;
+}
+
+#content .heading {
+    color: gray;
+    font: 400 1.75em 'Helvetica Neue';
+}
+
+.mtb-cities {
+  display: flex;
+  align-items: center;
+}
+
+.mtb-city {
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+  margin: .5em;
+  padding: .5em;
+}
+
+.mtb-city .image {
+  width: 64px;
+  height: 64px;
+  color: white;
+}

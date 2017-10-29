@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head lang="en">
+    <title>Arizona Mountain Biking Conditions</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./wu-icons/wu-icons-style.min.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+<div id="application">
+  <header id="header">
+    <h1 class="identity">MTB.to Arizona</h1>
+  </header>
+
+  <nav id="menu"></nav>
+
+  <article class="mtb-cities">
+    <mtb-city
+      v-for="item in cities"
+      v-bind:item="item"
+      v-bind:key="item.id">
+    </mtb-city>
+  </article>
+
+  <a href="https://www.yahoo.com/?ilc=401" target="_blank">
+    <img src="https://poweredby.yahoo.com/purple.png" width="134" height="29"/>
+  </a>
+</div>
+
+<script src="./js/app.js"></script>
+
+</body>
+</html>
