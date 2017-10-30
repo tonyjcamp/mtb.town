@@ -1,12 +1,13 @@
 #header .identity {
-    color: orangered;
-    font: 800 1.25em 'Helvetica Neue';
-    font-weight: 800;
+  color: orangered;
+  font-size: 1.25em;
+  font-weight: 800;
 }
 
 #content .heading {
-    color: gray;
-    font: 400 1.75em 'Helvetica Neue';
+  color: gray;
+  font-size: 1.75em;
+  font-weight: 400;
 }
 
 .mtb-cities {
