@@ -1,7 +1,13 @@
+body {
+  background-color: #f5f5f6;
+}
+
 #header .identity {
-  color: orangered;
+  color: rgb(59, 60, 63);
   font-size: 1.25em;
   font-weight: 800;
+  margin: 1.5em 0;
+  text-align: center;
 }
 
 #content .heading {
@@ -12,27 +18,52 @@
 
 .mtb-cities {
   display: flex;
-  align-items: center;
+  align-content: center;
 }
 
 .mtb-city {
-  background-color: whitesmoke;
+  background-color: #3399ff44;
+  border-radius: .5em;
   border: 1px solid lightgray;
-  margin: .5em;
-  padding: .5em;
+  margin: 0 1em;
+  overflow: hidden;
+}
+
+.mtb-city header,
+.mtb-city section {
+  padding: .5em 1em;
+}
+
+.mtb-city header {
+  background-color: white;
+  text-align: center;
+}
+
+.mtb-city section {
+  padding-bottom: 1em;
+}
+
+
+.mtb-city-name {
+  font-size: 1.125em;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 .mtb-city .image {
   width: 64px;
   height: 64px;
   color: white;
+  align
 }
 
 .mtb-forecast-label {
-  font-size: .875em;
-  font-weight: 500;
+  font-size: .625em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .mtb-forecast-value {
+  font-size: 1.5em;
   font-weight: 300;
 }

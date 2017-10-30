@@ -8,7 +8,7 @@ const handleLoadEvent = function(event) {
     data: {cities: []}
   });
 
-  const cities = ['Flagstaff, AZ', 'Phoenix, AZ', 'Sedona, AZ'];
+  const cities = ['Flagstaff, AZ', 'Phoenix, AZ', 'Sedona, AZ', 'Tucson, AZ'];
   cities.forEach(fetchCityData);
 };
 
@@ -27,21 +27,27 @@ const fetchCityData = (city, index) => {
 Vue.component('mtb-city', {
   props: ['item'],
   template: `<div class="mtb-city">
-    <header class="intro">
-      <h1 class="location">{{item.city}}, {{item.region}}</h1>
+    <header>
+      <h1 class="mtb-city-name">{{item.city}}</h1>
+      <div v-bind:class="'wu wu-64 wu-black wu-' + item.icon"></div>
+      <div>{{item.conditions}}</div>
     </header>
 
     <section class="info">
-        <div v-bind:class="'wu wu-64 wu-black wu-' + item.icon"></div>
-        <p>{{item.conditions}}</p>
-        <p class="mtb-forecast">
+        <div class="mtb-forecast">
           <span class="mtb-forecast-label">High</span>
           <span class="mtb-forecast-value">{{item.high}}&deg;</span>
           <span class="mtb-forecast-label">Low</span>
           <span class="mtb-forecast-value">{{item.low}}&deg;</span>
+        </div>
+        <p>
+          <span class="mtb-forecast-label">Sunrise</span>
+          <span class="mtb-forecast-value">{{item.sunrise}}</span>
         </p>
-        <p>Sunrise: {{item.sunrise}}</p>
-        <p>Sunset: {{item.sunset}}</p>
+        <p>
+          <span class="mtb-forecast-label">Sunset</span>
+          <span class="mtb-forecast-value">{{item.sunset}}</span>
+        </p>
     </section>
   </div>`
 });

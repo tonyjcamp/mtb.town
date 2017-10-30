@@ -17,7 +17,7 @@ function getWeather(text, callback) {
 
     const payload = {
       code: condition.code,
-      icon: forecast[0].text.toLowerCase().replace(' ', ''),
+      icon: forecast[0].text.toLowerCase().replace(/[^a-z]+/ig, ''),
       city: location.city,
       region: location.region,
       conditions: forecast[0].text,
