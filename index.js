@@ -16,8 +16,6 @@ function getWeather(text, callback) {
     const {condition, forecast} = item;
     const {code, date, temp} = condition;
 
-    console.log('date', date);
-
     const dateNow = Date.now();
     const {sunrise, sunset} = astronomy;
     let today = forecast[0].date;
