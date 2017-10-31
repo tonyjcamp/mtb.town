@@ -16,16 +16,18 @@ function getWeather(text, callback) {
     const {condition, forecast} = item;
     const {code, date, temp} = condition;
 
+    console.log('date', date);
+
     const dateNow = Date.now();
     const {sunrise, sunset} = astronomy;
     let today = forecast[0].date;
-    let dateSunrise = new Date(`${today} ${sunrise}`);
-    let dateSunset = new Date(`${today} ${sunset}`);
+    let dateSunrise = new Date(`${today} ${sunrise} MST`);
+    let dateSunset = new Date(`${today} ${sunset} MST`);
 
     if (dateNow > dateSunrise && dateNow > dateSunset) {
       today = forecast[1].date;
-      dateSunrise = new Date(`${today} ${sunrise}`);
-      dateSunset = new Date(`${today} ${sunset}`);
+      dateSunrise = new Date(`${today} ${sunrise} MST`);
+      dateSunset = new Date(`${today} ${sunset} MST`);
     }
 
     let icon = forecast[0].text.toLowerCase().replace(/[^a-z]+/ig, '');
