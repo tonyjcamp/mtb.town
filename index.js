@@ -14,17 +14,35 @@ function getWeather(text, callback) {
 
     const {astronomy, item, location} = data.query.results.channel;
     const {condition, forecast} = item;
+    const {code, date, temp} = condition;
+
+    const dateNow = Date.now();
+    const {sunrise, sunset} = astronomy;
+    let today = forecast[0].date;
+    let dateSunrise = new Date(`${today} ${sunrise}`);
+    let dateSunset = new Date(`${today} ${sunset}`);
+
+    if (dateNow > dateSunrise && dateNow > dateSunset) {
+      today = forecast[1].date;
+      dateSunrise = new Date(`${today} ${sunrise}`);
+      dateSunset = new Date(`${today} ${sunset}`);
+    }
+
+    let icon = forecast[0].text.toLowerCase().replace(/[^a-z]+/ig, '');
+    if (icon === 'scatteredthunderstorms') icon = 'chancetstorms';
 
     const payload = {
-      code: condition.code,
-      icon: forecast[0].text.toLowerCase().replace(/[^a-z]+/ig, ''),
+      code,
+      icon,
       city: location.city,
       region: location.region,
       conditions: forecast[0].text,
+      temperature: temp,
       high: forecast[0].high,
       low: forecast[0].low,
-      sunrise: astronomy.sunrise,
-      sunset: astronomy.sunset
+      sunrise: dateSunrise.toUTCString(),
+      sunset: dateSunset.toUTCString(),
+      updatedAt: new Date(date).toUTCString()
     };
 
     callback(payload);

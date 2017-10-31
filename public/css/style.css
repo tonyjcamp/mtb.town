@@ -2,6 +2,11 @@ body {
   background-color: #f5f5f6;
 }
 
+#credits {
+  margin: 8px 0;
+  text-align: center;
+}
+
 #header .identity {
   color: rgb(59, 60, 63);
   font-size: 1.25em;
@@ -16,54 +21,104 @@ body {
   font-weight: 400;
 }
 
+.mtb-conditions {
+  font-size: .75em;
+}
+
 .mtb-cities {
   display: flex;
-  align-content: center;
+  flex-flow: wrap;
+  justify-content: center;
 }
 
 .mtb-city {
-  background-color: #3399ff44;
-  border-radius: .5em;
   border: 1px solid lightgray;
-  margin: 0 1em;
+  margin: 0 16px 16px;
+  background-color: lightyellow;
+  border-radius: .375em;
+  flex: 0 0 calc(13 * 16px);
   overflow: hidden;
 }
 
 .mtb-city header,
-.mtb-city section {
-  padding: .5em 1em;
+.mtb-city section:not(:first-of-type) {
+  padding: 8px 24px;
 }
 
 .mtb-city header {
   background-color: white;
-  text-align: center;
+  position: relative;
+  text-align: left;
 }
 
 .mtb-city section {
-  padding-bottom: 1em;
-}
-
-
-.mtb-city-name {
-  font-size: 1.125em;
-  letter-spacing: 2px;
+  padding-bottom: 16px;
   text-align: center;
 }
 
-.mtb-city .image {
-  width: 64px;
-  height: 64px;
-  color: white;
-  align
+.mtb-city-name {
+  padding-top: 8px;
+  padding-bottom: 12px;
+  color: rgb(60, 62, 70);
+  font-size: .875em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mtb-city-temperature {
+  font-size: 3em;
+  font-weight: 600;
+  letter-spacing: -.125rem;
+  line-height: 1em;
+}
+
+.mtb-city-weather {
+  align-items: center;
+  padding: 8px 0;
+}
+
+.mtb-city-weather .wu {
+  top: 16px;
+  right: 8px;
+  position: absolute;
+}
+
+/* ASTRONOMY ELEMENTS */
+
+.mtb-astronomy-status {
+  padding-bottom: 16px;
+  color: rgb(70, 72, 78);
+  font-size: .8125em;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* FORECAST ELEMENTS */
+
+.mtb-forecasts {
+  display: flex;
+  text-align: center;
+}
+
+.mtb-forecast {
+  height: 100%;
+  background-color: #3399ff44;
+  flex: 1 1 0;
+  padding: 16px 8px;
+  white-space: nowrap;
+}
+
+.mtb-forecast:first-of-type {
+  background-color: #ff9800;
 }
 
 .mtb-forecast-label {
-  font-size: .625em;
+  font-size: .5em;
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .mtb-forecast-value {
   font-size: 1.5em;
-  font-weight: 300;
+  font-weight: 400;
 }
