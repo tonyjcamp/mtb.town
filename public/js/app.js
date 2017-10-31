@@ -14,7 +14,8 @@ const handleLoadEvent = function(event) {
     'Phoenix, AZ',
     'Prescott, AZ',
     'Sedona, AZ',
-    'Tucson, AZ'
+    'Tucson, AZ',
+    'Gilbert, AZ'
   ];
   cities.forEach(fetchCityData);
 };
