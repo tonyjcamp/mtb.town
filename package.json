@@ -10,7 +10,7 @@
   "author": "Ryan Gasparini <ryan@rxgx.com> (http://www.rxgx.com)",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2",
+    "express": "^4.21.1",
     "yql": "^1.0.2"
   },
   "devDependencies": {}
